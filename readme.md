@@ -79,3 +79,12 @@ args:
 - maybe make the storage more configurable maybe - currently 5bit/channel color and alpha, 6bit metallic and roughness, 24bit normal, 8bit flags (only unlit flag currently passed)
 - maybe add "image" mode that records the actual view rather than the material properties
 - update to 0.15 and upstream
+
+## License
+
+boimp is free and open source. All code in this repository is dual-licensed under either:
+
+- MIT License ([LICENSE-MIT](/LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
+- Apache License, Version 2.0 ([LICENSE-APACHE](/LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
+
+at your option.
