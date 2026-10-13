@@ -113,6 +113,12 @@ fn fragment(in: ImposterVertexOut) -> FragmentOutput {
     pbr_input.material.flags |= STANDARD_MATERIAL_FLAGS_FOG_ENABLED_BIT;
 
     out.color = main_pass_post_lighting_processing(pbr_input, out.color);
+
+#ifdef TRANSPARENT_FOCUS_OUTPUT
+    // depth of field: an imposter stands in for distant geometry, so it is always as far away
+    // as the effect allows, covering the pixel by its alpha
+    out.focus = vec4<f32>(1.0e5, 1.0, 0.0, out.color.a);
+#endif
 #endif
 
     // out.color = clamp(out.color, vec4<f32>(0.2, 0.0, 0.0, 0.2), vec4<f32>(1.0, 1.0, 1.0, 0.7));
