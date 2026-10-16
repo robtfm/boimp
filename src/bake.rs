@@ -62,7 +62,7 @@ use bevy::{
         },
         Extract, Render, RenderApp, RenderDebugFlags, RenderSet,
     },
-    tasks::AsyncComputeTaskPool,
+    tasks::IoTaskPool,
     utils::Parallel,
 };
 use wgpu::{BufferUsages, ShaderStages, TexelCopyBufferInfo, TexelCopyBufferLayout};
@@ -1816,7 +1816,7 @@ pub fn copy_back(baked: Res<ImpostersBaked>) {
             }
         };
 
-        AsyncComputeTaskPool::get().spawn(finish).detach();
+        IoTaskPool::get().spawn(finish).detach();
     }
 }
 
